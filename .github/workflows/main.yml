@@ -1,3 +1,4 @@
+
 name: Build Android APK
 
 on:
@@ -11,24 +12,25 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Setup Java
         uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: '21'
+          java-version: '17'
 
-      - name: Setup Android SDK
-        uses: android-actions/setup-android@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          packages: 'platform-tools platforms;android-35 build-tools;35.0.0'
+          node-version: '20'
+          cache: npm
 
       - name: Install dependencies
         run: npm ci
 
-      - name: Sync Android
+      - name: Sync Capacitor
         run: npx cap sync android
 
       - name: Build APK
@@ -42,3 +44,4 @@ jobs:
         with:
           name: Indian-Risk-Manager-APK
           path: android/app/build/outputs/apk/debug/app-debug.apk
+          
