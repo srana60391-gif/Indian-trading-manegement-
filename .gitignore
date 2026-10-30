@@ -1,0 +1,8 @@
+node_modules/
+__pycache__/
+*.pyc
+index-backup.html
+server-backup.js
+server-old.js
+check0.js
+check1.js

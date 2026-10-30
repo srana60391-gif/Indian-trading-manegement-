@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Risk Manager</string>
+    <string name="title_activity_main">Risk Manager</string>
+    <string name="package_name">com.example.riskmanager</string>
+    <string name="custom_url_scheme">com.example.riskmanager</string>
+</resources>
